@@ -12,16 +12,65 @@ namespace TestsBracketsequences
 
 		TEST_METHOD(SimpleTest)
 		{
-			std::string x = Decode(1, '(', ')');
-			std::string f = "23";
-			Assert::AreEqual(x, f);
+			std::string Work = Decode(1, '(', ')');
+			std::string Correct = "()";
+			Assert::AreEqual(Work, Correct);
 		}
 
-		TEST_METHOD(SimpleTest2)
+		TEST_METHOD(DefaultTest)
 		{
-			std::string x = Decode(1, '(', ')');
-			std::string f = "";
-			Assert::AreEqual(x, f);
+			std::string Work = Decode(1101, '(', ')');
+			std::string Correct = "(()())";
+			Assert::AreEqual(Work, Correct);
+		}
+
+		TEST_METHOD(NeedOnlyCloseSymbol)
+		{
+			std::string Work = Decode(11, '(', ')');
+			std::string Correct = "((()))";
+			Assert::AreEqual(Work, Correct);
+		}
+
+		TEST_METHOD(LongSequence)
+		{
+			std::string Work = Decode(110011101101, '(', ')');
+			std::string Correct = "(())((()(()())))";
+			Assert::AreEqual(Work, Correct);
+		}
+
+		TEST_METHOD(QueueOnesAndZeros)
+		{
+			std::string Work = Decode(10101, '(', ')');
+			std::string Correct = "(()())()";
+			Assert::AreEqual(Work, Correct);
+		}
+
+		TEST_METHOD(RandomTest)
+		{
+			std::string Work = Decode(1101001, '(', ')');
+			std::string Correct = "(()())()";
+			Assert::AreEqual(Work, Correct);
+		}
+
+		TEST_METHOD(SmallSequence)
+		{
+			std::string Work = Decode(101, '(', ')');
+			std::string Correct = "()()";
+			Assert::AreEqual(Work, Correct);
+		}
+
+		TEST_METHOD(SquareBrackets)
+		{
+			std::string Work = Decode(10111, '(', ')');
+			std::string Correct = "[][[[]]]";
+			Assert::AreEqual(Work, Correct);
+		}
+
+		TEST_METHOD(RoundBrackets)
+		{
+			std::string Work = Decode(1110101, '(', ')');
+			std::string Correct = "{{{}{}{}}}";
+			Assert::AreEqual(Work, Correct);
 		}
 	};
 }
