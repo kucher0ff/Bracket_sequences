@@ -166,6 +166,8 @@
     </ClCompile>
     <ClCompile Include="Tests_Add_Zeros_Unit.cpp" />
     <ClCompile Include="Tests_Decode.cpp" />
+    <ClCompile Include="Tests_Generate_Correct_Bracket_Sequences.cpp" />
+    <ClCompile Include="Tests_Generate_lvl_tree_from_previous.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
