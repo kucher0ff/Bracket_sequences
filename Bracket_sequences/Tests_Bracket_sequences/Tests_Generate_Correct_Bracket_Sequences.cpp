@@ -39,14 +39,14 @@ namespace TestsBracketsequences
 			Assert::IsTrue(Work == Correct);
 		}
 
-		TEST_METHOD(ThreePairsAndSquareBrackets)
+		TEST_METHOD(ThreePairs_SquareBrackets)
 		{
 			std::set<std::string> Work = Generate_correct_bracket_sequences(3, '[', ']');
 			std::set<std::string> Correct = { "[[[]]]", "[][[]]", "[[][]]", "[][][]", "[[]][]" };
 			Assert::IsTrue(Work == Correct);
 		}
 
-		TEST_METHOD(ThreePairsAndRoundBrackets)
+		TEST_METHOD(ThreePairs_RoundBrackets)
 		{
 			std::set<std::string> Work = Generate_correct_bracket_sequences(3, '{', '}');
 			std::set<std::string> Correct = { "{{{}}}", "{}{{}}", "{{}{}}", "{}{}{}", "{{}}{}" };
