@@ -1,3 +1,4 @@
+#include <iostream>
 #include "functions.h"
 #include <set>
 #include <string>
@@ -6,7 +7,7 @@
 
 std::set<int> Generate_level_tree_from_previous(int Number_pairs) 
 {
-    //Создает сет интов для запипи рез-та
+    //Создает сет интов для запиcи рез-та
     std::set<int> result;
 
     if (Number_pairs < 1) return result;
@@ -104,4 +105,17 @@ int Add_zeros_and_unit(int bit_mask, int N)
     bit_mask = std::stoi(stringMask);
 
     return bit_mask;
+}
+
+std::set<std::string> Generate_correct_bracket_sequences(int Number_pairs, char open_symbol, char close_symbol)
+{
+    std::set<int> generated_masks = Generate_level_tree_from_previous(Number_pairs);
+    std::set<std::string> decoded_masks;
+
+    for (int mask : generated_masks)
+    {
+        decoded_masks.insert(Decode(mask, open_symbol, close_symbol));
+    }
+
+    return decoded_masks;
 }
