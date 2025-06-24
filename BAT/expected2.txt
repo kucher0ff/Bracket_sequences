@@ -1,0 +1,4 @@
+Correct bracket sequences:
+(())
+()()
+Count of sequences: 2

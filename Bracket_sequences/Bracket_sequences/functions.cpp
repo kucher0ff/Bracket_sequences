@@ -107,13 +107,19 @@ int Add_zeros_and_unit(int bit_mask, int N)
     return bit_mask;
 }
 
+//Главная функция - генерирует готовые корректные скобочные последовательности
 std::set<std::string> Generate_correct_bracket_sequences(int Number_pairs, char open_symbol, char close_symbol)
 {
+    //Переменная, в которой все маски дерева
     std::set<int> generated_masks = Generate_level_tree_from_previous(Number_pairs);
+    
+    //Переменная для выходных значений
     std::set<std::string> decoded_masks;
 
+    //Проходим по всему set'у
     for (int mask : generated_masks)
     {
+        //В decoded_masks записываем каждую декодированную последовательность
         decoded_masks.insert(Decode(mask, open_symbol, close_symbol));
     }
 
